@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interbrasil Distribuidora | Peças para Roçadeiras e Motosserras</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="interbrasil.css">
+</head>
+<body>
+    <!-- Barra de Navegação com Login -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/logointerbrasil.png.png" alt="Interbrasil Distribuidora">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li>
+                <button id="btn-login" class="btn-login">Login</button>
+                <div id="login-modal" class="login-modal">
+                    <div class="login-container">
+                        <h2>Login</h2>
+                        <form id="form-login">
+                            <input type="text" id="login-email-cpf-cnpj" placeholder="E-mail, CPF ou CNPJ" required>
+                            <input type="password" id="login-senha" placeholder="Senha" required>
+                            <button type="submit">Entrar</button>
+                        </form>
+                        <p>Não tem uma conta? <a href="#" id="link-cadastro">Cadastre-se</a></p>
+                    </div>
+                    <div class="cadastro-container" style="display: none;">
+                        <h2>Cadastro</h2>
+                        <form id="form-cadastro">
+                            <input type="text" id="cadastro-nome" placeholder="Nome Completo" required>
+                            <input type="email" id="cadastro-email" placeholder="E-mail" required>
+                            <input type="text" id="cadastro-cpf-cnpj" placeholder="CPF ou CNPJ" required>
+                            <input type="password" id="cadastro-senha" placeholder="Senha" required>
+                            <button type="submit">Cadastrar</button>
+                        </form>
+                        <p>Já tem uma conta? <a href="#" id="link-login">Faça Login</a></p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Seção Hero (Destaque) -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Peças Originais para Sua Roçadeira e Motosserra</h1>
+            <p>Garanta o melhor desempenho com peças de reposição de qualidade.</p>
+            <button class="cta-button" onclick="scrollParaCatalogo()">Ver Catálogo</button>
+        </div>
+    </section>
+
+    <!-- Seção de Catálogo -->
+    <section id="catalogo" class="catalogo">
+        <h2>Catálogo de Peças</h2>
+        <div class="filtros-busca">
+            <input type="text" id="busca" placeholder="Buscar peças..." oninput="filtrarPecas()">
+            <div class="filtros">
+                <button class="filtro-btn ativo" data-categoria="todos">Todos</button>
+                <button class="filtro-btn" data-categoria="roçadeira">Roçadeira</button>
+                <button class="filtro-btn" data-categoria="motosserra">Motosserra</button>
+            </div>
+        </div>
+        <div class="pecas-grid" id="pecas-grid">
+            <!-- Peças serão carregadas aqui via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Carrinho de Compras -->
+    <div id="carrinho" class="carrinho">
+        <button id="btn-recolher-carrinho" class="btn-recolher-carrinho">&#10094;</button>
+        <h2>Carrinho de Compras</h2>
+        <ul id="lista-carrinho">
+            <!-- Itens do carrinho serão adicionados aqui -->
+        </ul>
+        <p>Total: <span id="total-carrinho">R$ 0,00</span></p>
+        <button class="cta-button" onclick="finalizarPedido()">Finalizar Pedido</button>
+    </div>
+
+    <script src="Interbrasil.js"></script>
+</body>
+</html>
